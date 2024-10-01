@@ -264,9 +264,9 @@ const Rec1 = () => {
                     <p>
                       {item.kuantitas} {item.satuanKuantitas}x
                     </p>
-                    <p>{item.hargaBarang.toLocaleString("en-US")} =Rp</p>
+                    <p>{Number(item.hargaBarang).toLocaleString("en-US")} =Rp</p>
                     <p>
-                      {(item.hargaBarang * item.kuantitas).toLocaleString("en-US")}
+                      {Number((item.hargaBarang * item.kuantitas)).toLocaleString("en-US")}
                     </p>
                   </div>
                 </React.Fragment>
@@ -282,7 +282,7 @@ const Rec1 = () => {
                   <p>BAYAR</p>
                   <p>KEMBALI</p>
                 </div>
-                <div className='flex flex-col justify-end mr-20'>
+                <div className='flex flex-col justify-end mr-10'>
                   <p>Rp.</p>
                   <p>Rp.</p>
                   <p>Rp.</p>
@@ -290,20 +290,20 @@ const Rec1 = () => {
                 </div>
                 <div className='text-right'>
                   <p>
-                    {datas.barang.reduce((sum, item) => sum + Number(item.kuantitas), 0)}
+                    {Number(datas.barang.reduce((sum, item) => sum + Number(item.kuantitas), 0))}
                   </p>
                   <p>
-                    {datas.barang
+                    {Number(datas.barang
                       .reduce(
                         (sum, item) => sum + item.kuantitas * item.hargaBarang,
                         0
-                      )
+                      ))
                       .toLocaleString("en-US")}
                   </p>
-                  <p>{datas.potongan.toLocaleString("en-US")}</p>
-                  <p>{datas.bayar.toLocaleString("en-US")}</p>
+                  <p>{Number(datas.potongan).toLocaleString("en-US")}</p>
+                  <p>{Number(datas.bayar).toLocaleString("en-US")}</p>
                   <p>
-                    {(
+                    {Number(
                       datas.bayar -
                       (datas.barang.reduce(
                         (sum, item) => sum + Number(item.kuantitas) * Number(item.hargaBarang),
