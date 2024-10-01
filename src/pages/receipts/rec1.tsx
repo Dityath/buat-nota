@@ -240,7 +240,7 @@ const Rec1 = () => {
           <div className='border border-black w-fit h-fit'>
             <div
               ref={paperRef}
-              className='w-[287px] px-[24px] py-[40px] text-[12px] font-consola'>
+              className='w-[287px] px-[30px] py-[40px] text-[12px] font-consola'>
               <div className='text-center'>
                 <p className='font-consola text-[14px]'>UD MAJU JAYA</p>
                 <p className='font-consola'>Jl A. Yani 37 Bangsalsari, Jember</p>
