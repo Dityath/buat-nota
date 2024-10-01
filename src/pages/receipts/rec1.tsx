@@ -240,7 +240,7 @@ const Rec1 = () => {
           <div className='border border-black w-fit h-fit'>
             <div
               ref={paperRef}
-              className='w-[287px] px-[19px] py-[40px] text-[12px] font-consola'>
+              className='w-[287px] px-[24px] py-[40px] text-[12px] font-consola'>
               <div className='text-center'>
                 <p className='font-consola text-[14px]'>UD MAJU JAYA</p>
                 <p className='font-consola'>Jl A. Yani 37 Bangsalsari, Jember</p>
@@ -276,7 +276,7 @@ const Rec1 = () => {
               </p>
               <div className='pl-10 flex justify-between'>
                 <div>
-                  <p>BNT</p>
+                  <p>QNT</p>
                   <p>TOTAL</p>
                   <p>POTONGAN</p>
                   <p>BAYAR</p>
@@ -290,7 +290,7 @@ const Rec1 = () => {
                 </div>
                 <div className='text-right'>
                   <p>
-                    {datas.barang.reduce((sum, item) => sum + item.kuantitas, 0)}
+                    {datas.barang.reduce((sum, item) => sum + Number(item.kuantitas), 0)}
                   </p>
                   <p>
                     {datas.barang
@@ -306,7 +306,7 @@ const Rec1 = () => {
                     {(
                       datas.bayar -
                       (datas.barang.reduce(
-                        (sum, item) => sum + item.kuantitas * item.hargaBarang,
+                        (sum, item) => sum + Number(item.kuantitas) * Number(item.hargaBarang),
                         0
                       ) -
                         datas.potongan)
@@ -316,7 +316,7 @@ const Rec1 = () => {
               </div>
               <p className='text-center'>==================================</p>
               <div className='flex justify-between'>
-                <p>4 items</p>
+                <p>{Number(datas.barang.length)} items</p>
                 <p>ASIA</p>
               </div>
             </div>
